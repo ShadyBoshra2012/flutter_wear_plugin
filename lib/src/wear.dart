@@ -55,7 +55,7 @@ class Wear {
   }
 
   /// Fetches the shape of the watch face
-  Future<String> getShape() async {
+  Future<String?> getShape() async {
     try {
       return await _channel.invokeMethod<String>('getShape');
     } on PlatformException catch (e, st) {
@@ -66,7 +66,7 @@ class Wear {
   }
 
   /// Tells the application if we are currently in ambient mode
-  Future<bool> isAmbient() async {
+  Future<bool?> isAmbient() async {
     try {
       return await _channel.invokeMethod<bool>('isAmbient');
     } on PlatformException catch (e, st) {
@@ -121,14 +121,14 @@ class AmbientDetails {
   /// white areas to prevent pixel burn-in. Both of these
   /// requirements only apply in ambient mode, and only when
   /// this property is set to true.
-  final bool burnInProtection;
+  final bool? burnInProtection;
 
   /// Used to indicate whether the device has low-bit ambient mode.
   ///
   /// When this property is set to true, the screen supports fewer bits
   /// for each color in ambient mode. In this case, activities should
   /// disable anti-aliasing in ambient mode.
-  final bool lowBitAmbient;
+  final bool? lowBitAmbient;
 }
 
 /// Callback to receive ambient mode state changes.

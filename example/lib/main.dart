@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
                   Text(
                     'Shape: ${shape == WearShape.round ? 'round' : 'square'}',
                   ),
-                  child,
+                  child ?? Container(),
                 ],
               );
             },
